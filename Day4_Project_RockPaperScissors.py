@@ -50,7 +50,6 @@ if optionUser==0:
         print("You lose")
     if optionComp==2:
         print("You Win !")
-
 if optionUser==1:
     if optionComp==0:
         print("You Win!")

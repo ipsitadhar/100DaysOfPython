@@ -14,3 +14,11 @@ student_scores.sort()
 maximum=student_scores[l-1]
 
 print(f"The highest score in the class is: {maximum}")
+# or
+
+highest_score=0
+for score in student_scores:
+  if score>highest_score:
+    highest_score=score
+
+print(f"The highest score in the class is: {highest_score}")

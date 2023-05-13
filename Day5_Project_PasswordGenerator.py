@@ -17,7 +17,7 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
 
 #Easy level
-"""
+
 password=""
 for i in range(1,nr_letters+1):
     password=password+random.choice(letters)
@@ -26,7 +26,7 @@ for j in range(1,nr_symbols+1):
 for k in range(1,nr_numbers+1):
     password=password+random.choice(numbers)
 print(password)
-"""
+
 
 #hard level
 letter=0
@@ -59,6 +59,17 @@ while "_" in password:
     
  
 print(f"{' '.join(password)}")
+
+#another way of hard level 
+password=[]
+for i in range(1,nr_letters+1):
+    password.append(random.choice(letters))
+for j in range(1,nr_symbols+1):
+    password.append(random.choice(symbols))
+for k in range(1,nr_numbers+1):
+    password.append(random.choice(numbers))
+random.shuffle(password)
+print(f"{''.join(password)}")
 
 
 

@@ -20,44 +20,45 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 """
 password=""
 for i in range(1,nr_letters+1):
-    password=password+letters[random.randint(0,nr_letters-1)]
-for j in range(1,nr_symbols+1):
-    password=password+numbers[random.randint(0,nr_symbols-1)]
-for k in range(1,nr_numbers+1):
-    password=password+symbols[random.randint(0,nr_numbers-1)]
-print(password)
-"""
-password=""
-for i in range(1,nr_letters+1):
     password=password+random.choice(letters)
 for j in range(1,nr_symbols+1):
     password=password+random.choice(symbols)
 for k in range(1,nr_numbers+1):
     password=password+random.choice(numbers)
 print(password)
-
+"""
 
 #hard level
+letter=0
+symbol=0
+number=0
+position=0
 pwd=[letters,numbers,symbols]
 total_len=nr_letters+nr_symbols+nr_numbers
-password=""
-let=0
-num=0
-sym=0
-for i in range(1,total_len+1):
-
-    row=random.randint(0,2)
-    if row==0 and let<nr_letters:
-        col=letters[random.randint(0,len(letters)-1)]
-        password=password+col
-        let+=1
-    elif row==1 and sym<nr_symbols:
-        col=symbols[random.randint(0,len(symbols)-1)]
-        password=password+co
-        sym+=1
-    elif row==2 and num<nr_numbers:
-        col=numbers[random.randint(0,len(numbers)-1)]
-        password=password+col
-        num+=1
-    
+password=["_"] * total_len
 print(password)
+#for position in range(len(password)):
+while "_" in password:
+    guess=random.choice(random.choice(pwd))
+    print(guess)
+    if guess in letters:
+        letter+=1
+        if letter<=nr_letters:
+            password[position]=guess
+            position+=1
+    if guess in symbols:
+        symbol+=1
+        if symbol<=nr_symbols:
+            password[position]=guess
+            position+=1
+    if guess in numbers:
+        number+=1
+        if number<=nr_numbers:
+            password[position]=guess
+            position+=1
+    
+ 
+print(f"{' '.join(password)}")
+
+
+

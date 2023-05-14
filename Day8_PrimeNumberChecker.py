@@ -1,6 +1,6 @@
 def prime_checker(number):
     bFlag=False
-    for n in range(2,number-1):
+    for n in range(2,number):
         if number%n==0:
             bFlag=True
     if (bFlag):

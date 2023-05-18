@@ -12,7 +12,7 @@
 
 """
 from random import randint
-from art2 import logo
+from Day11.art2 import logo
 print(logo)
 print("Welcome to the number guessing game !!")
 print("I am thinking of a number between 1 and 100")

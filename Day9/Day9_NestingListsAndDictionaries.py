@@ -34,3 +34,7 @@ travel_log=[
         "visits":2,
     },
 ]
+
+#print(travel_log[0]["country"])
+for n in travel_log:
+    print(n["country"])

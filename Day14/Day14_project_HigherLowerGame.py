@@ -48,4 +48,3 @@ def displayGame(a,b):
 random_a=random.choice(data)["name"]
 random_b=random.choice(data)["name"]
 print(random_a,random_b)
-#hfkhfk

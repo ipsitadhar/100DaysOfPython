@@ -4,22 +4,19 @@ from money_machine import MoneyMachine
 
 coffee = CoffeeMaker()
 menu = Menu()
-menu_item = MenuItem()
 machine = MoneyMachine()
 
 is_on = True
 while is_on:
+    options = menu.get_items()
     choice = input("What would you like? (espresso/latte/cappuccino): ")
     if choice == "off":
         is_on = False
     elif choice == "report":
-        print(f"Water: {resources['water']}ml")
-        print(f"Milk: {resources['milk']}ml")
-        print(f"Coffee: {resources['coffee']}g")
-        print(f"Money: ${profit}")
+        coffee.report()
+        machine.report()
     else:
         drink = menu.find_drink(choice)
-      """  if coffee.is_resource_sufficient():
-            payment = process_coins()
-            if is_transaction_successful(payment, drink["cost"]):
-                make_coffee(choice, drink["ingredients"]) """
+        if machine.make_payment(drink.cost) and coffee.is_resource_sufficient(drink):
+            coffee.make_coffee(drink)
+
